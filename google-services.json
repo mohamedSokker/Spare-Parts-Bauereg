@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "137722197512",
+    "project_id": "bauersparepart",
+    "storage_bucket": "bauersparepart.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137722197512:android:9e27949c21b862c75783bd",
+        "android_client_info": {
+          "package_name": "com.mohamed_sokker.BaueregMobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgFZ2BJXltmeyz9yjoO8A7AWn7NeY6AUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

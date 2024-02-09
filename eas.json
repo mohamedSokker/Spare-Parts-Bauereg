@@ -1,0 +1,35 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "BASE_URL": "https://baueregapi.onrender.com"
+      }
+    },
+    "preview2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "preview3": {
+      "developmentClient": true
+    },
+    "production": {
+      "env": {
+        "BASE_URL": "https://baueregapi.onrender.com"
+      }
+    },
+    "test": {
+      "env": {
+        "APP_ICON": "./assets/icon-test.png",
+        "APP_NAME": "My App (Test)"
+      }
+    }
+  }
+}
