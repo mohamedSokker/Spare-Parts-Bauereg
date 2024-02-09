@@ -18,3 +18,6 @@ web-build/
 
 node_modules
 .env
+google-services.json
+app.json
+eas.json
