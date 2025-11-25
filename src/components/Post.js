@@ -16,39 +16,77 @@ const Post = ({ item }) => {
   return (
     <View style={styles.view1}>
       <View style={styles.view4}>
-        <View style={[styles.circle, { backgroundColor: colors.logo }]}>
-          <Text style={{ color: "white" }}>1</Text>
-        </View>
-        <View
-          style={{ height: 1, backgroundColor: colors.logo, width: "24%" }}
-        ></View>
-        <View style={[styles.circle, { backgroundColor: colors.logo }]}>
-          <Text style={{ color: "white" }}>2</Text>
-        </View>
-        <View
-          style={{ height: 1, backgroundColor: colors.logo, width: "24%" }}
-        ></View>
-        <View
-          style={[
-            styles.circle,
-            {
-              backgroundColor:
-                item.ItemStatus === "Transition" && item.IsPending === "true"
-                  ? colors.white
-                  : colors.logo,
-            },
-          ]}
-        >
-          <Text
+        <View style={[styles.viewfirst, { position: "relative" }]}>
+          <View style={[styles.circle, { backgroundColor: colors.logo }]}>
+            <Text style={{ color: "white" }}>1</Text>
+          </View>
+          <View
             style={{
-              color:
-                item.ItemStatus === "Transition" && item.IsPending === "true"
-                  ? colors.logo
-                  : colors.white,
+              height: 1,
+              backgroundColor: colors.logo,
+              width: "48%",
+              position: "absolute",
+              right: 0,
             }}
+          ></View>
+        </View>
+
+        <View style={[styles.viewSecond, { position: "relative" }]}>
+          <View
+            style={{
+              height: 1,
+              backgroundColor: colors.logo,
+              width: "48%",
+              position: "absolute",
+              left: 0,
+            }}
+          ></View>
+          <View style={[styles.circle, { backgroundColor: colors.logo }]}>
+            <Text style={{ color: "white" }}>2</Text>
+          </View>
+          <View
+            style={{
+              height: 1,
+              backgroundColor: colors.logo,
+              width: "48%",
+              position: "absolute",
+              right: 0,
+            }}
+          ></View>
+        </View>
+
+        <View style={styles.viewThird}>
+          <View
+            style={{
+              height: 1,
+              backgroundColor: colors.logo,
+              width: "48%",
+              position: "absolute",
+              left: 0,
+            }}
+          ></View>
+          <View
+            style={[
+              styles.circle,
+              {
+                backgroundColor:
+                  item.ItemStatus === "Transition" && item.IsPending === "true"
+                    ? colors.white
+                    : colors.logo,
+              },
+            ]}
           >
-            3
-          </Text>
+            <Text
+              style={{
+                color:
+                  item.ItemStatus === "Transition" && item.IsPending === "true"
+                    ? colors.logo
+                    : colors.white,
+              }}
+            >
+              3
+            </Text>
+          </View>
         </View>
       </View>
       <View style={styles.view2}>
@@ -124,7 +162,9 @@ const Post = ({ item }) => {
                   : item.ItemFrom}
               </Text>
             </Text>
-            <Text style={styles.txt2}>Date: {getDate(item?.DateTime)}</Text>
+            <Text style={styles.txt2}>
+              Date: {new Date(item?.DateTime).toLocaleString()}
+            </Text>
           </View>
         ) : item.ItemStatus === "Transition" ? (
           <View style={styles.view3}>
@@ -144,7 +184,9 @@ const Post = ({ item }) => {
               </Text>
             )}
             {/* </Text> */}
-            <Text style={styles.txt2}>Date: {getDate(item?.DateTime)}</Text>
+            <Text style={styles.txt2}>
+              Date: {new Date(item?.DateTime).toLocaleString()}
+            </Text>
           </View>
         ) : item.ItemStatus === "Exchange" ? (
           <View style={styles.view3}>
@@ -154,7 +196,9 @@ const Post = ({ item }) => {
               <Text style={{ color: "red" }}>{item.ItemFrom}</Text> by{" "}
               <Text style={{ color: "red" }}>{item.ItemTo}</Text>
             </Text>
-            <Text style={styles.txt2}>Date: {getDate(item?.DateTime)}</Text>
+            <Text style={styles.txt2}>
+              Date: {new Date(item?.DateTime).toLocaleString()}
+            </Text>
           </View>
         ) : (
           <></>
@@ -217,16 +261,19 @@ const styles = StyleSheet.create({
   },
   viewfirst: {
     width: "33%",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
   viewSecond: {
     width: "33%",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },
   viewThird: {
     width: "33%",
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   },

@@ -23,7 +23,7 @@ import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 // import Toast from "react-native-toast-message";
 
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
 import { StocksContext } from "../contexts/StocksContext";
 import { colors } from "../globals/styles";
@@ -294,8 +294,8 @@ const Confirm = ({ route, navigation, socket }) => {
                       ? Ar.Finished
                       : En.Finished
                     : lang === "ar"
-                    ? Ar.Finish
-                    : En.Finish}
+                      ? Ar.Finish
+                      : En.Finish}
                 </Text>
               </TouchableOpacity>
             </View>

@@ -25,7 +25,7 @@ import tw from "tailwind-react-native-classnames";
 import { Icon } from "react-native-elements";
 // import Toast from "react-native-toast-message";
 
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
 import { colors } from "../globals/styles";
 import PlaceOrderFields from "../components/PlaceOrderFields";
@@ -242,7 +242,7 @@ const PlaceOrder = ({ navigation, socket }) => {
       >
         <Image
           style={{ width: 50, height: 50, borderRadius: 50 }}
-          source={{ uri: `${BASE_URL}/${item.ProfileImg}` }}
+          source={{ uri: `${EXPO_PUBLIC_BASE_URL}/${item.ProfileImg}` }}
         />
         <Text>{item.UserName}</Text>
       </View>
@@ -263,8 +263,8 @@ const PlaceOrder = ({ navigation, socket }) => {
                 ? Ar.Sent
                 : En.Sent
               : lang === "ar"
-              ? Ar.Send
-              : En.Send}
+                ? Ar.Send
+                : En.Send}
           </Text>
         </TouchableOpacity>
       </View>

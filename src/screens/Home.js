@@ -48,7 +48,7 @@ const Home = ({ socket, hasPermission }) => {
   };
 
   const getUserId = (data) => {
-    const appVersion = 1;
+    const appVersion = 2;
     if (appVersion !== data.sparePartAppVersion) {
       console.log(data);
       Alert.alert(

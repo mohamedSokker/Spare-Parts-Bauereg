@@ -20,7 +20,7 @@ const ScanItem = ({ navigation, socket, hasPermission }) => {
 
   const axiosPrivate = useAxiosPrivate();
 
-  console.log(searchedData);
+  // console.log(searchedData);
 
   const handleChildData = (dataFromChild) => {
     setScanData(dataFromChild?.data);
@@ -42,21 +42,26 @@ const ScanItem = ({ navigation, socket, hasPermission }) => {
             method: "POST",
             data: { Code: scanData },
           });
-          console.log(data?.data);
-          const result = data?.data.find(
+          console.log(`data: ${JSON.stringify(data?.data)}`);
+          console.log(usersData?.roles);
+          const result = data?.data?.find(
             (d) =>
-              d.Store === usersData?.roles?.StockRes &&
-              usersData?.roles?.StockRes[0]
+              usersData?.roles?.StockRes &&
+              d?.Store === usersData?.roles?.StockRes[0]
           );
+          console.log(`result: ${JSON.stringify(result)}`);
           let newResult = {};
+          // console.log(usersData.roles.StockRes[0]);
           if (!result) {
+            console.log("from not result");
             newResult = data?.data.find((d) => d.Code === scanData);
             if (!newResult) throw new Error(`No Found Of this Code in Store`);
             newResult = { ...newResult, Quantity: 0 };
           } else {
+            console.log("from result");
             newResult = { ...result };
           }
-          console.log(`data => ${JSON.stringify(newResult)}`);
+          // console.log(`data => ${JSON.stringify(newResult)}`);
           setSearchedData([newResult]);
           setIsLoading(false);
         } else {

@@ -57,7 +57,6 @@ const SelectSite = ({ navigation, socket }) => {
           method: "POST",
           data: JSON.stringify({}),
         });
-        // console.log(data?.data);
         const copiedData = [];
         data?.data?.map((d, i) => {
           copiedData.push({

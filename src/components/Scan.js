@@ -74,8 +74,11 @@ const Scan = ({ onChildData, hasPermission, check, setLoading }) => {
         method: "POST",
         data: JSON.stringify({ Code: code }),
       });
+      // console.log(data?.data);
       const result = data?.data.find(
-        (d) => d.Store === usersData?.roles?.StockRes[0]
+        (d) =>
+          usersData?.roles?.StockRes &&
+          d.Store === usersData?.roles?.StockRes[0]
       );
       let newResult = {};
       if (!result) {

@@ -118,7 +118,7 @@ const Profile = ({ socket, navigation }) => {
         >
           {/* <View style={styles.view9}>
             <Image
-              source={{ uri: `${BASE_URL}/${usersData.img}` }}
+              source={{ uri: `${EXPO_PUBLIC_BASE_URL}/${usersData.img}` }}
               style={{ width: 100, height: 100, borderRadius: 100 }}
               resizeMode="cover"
             />

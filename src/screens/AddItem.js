@@ -9,7 +9,7 @@ import {
 import React, { useContext, useRef, useState } from "react";
 // import Toast from "react-native-toast-message";
 
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
 import { colors } from "../globals/styles";
 import { LoginContext } from "../contexts/LoginContext";
@@ -59,6 +59,11 @@ const AddItem = ({ navigation, socket }) => {
       setPageLoading(false);
       showToast(`success`, `Successfully Add Item`);
     } catch (err) {
+      console.log(
+        err?.response?.data?.message
+          ? err?.response?.data?.message
+          : err?.message
+      );
       showToast(
         `error`,
         err?.response?.data?.message

@@ -1,14 +1,14 @@
 import axios from "axios";
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
-console.log(BASE_URL);
+console.log(EXPO_PUBLIC_BASE_URL);
 
 export default axios.create({
-  baseURL: BASE_URL,
+  baseURL: EXPO_PUBLIC_BASE_URL,
 });
 
 export const axiosPrivate = axios.create({
-  baseURL: BASE_URL,
+  baseURL: EXPO_PUBLIC_BASE_URL,
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 });

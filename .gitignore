@@ -19,5 +19,6 @@ web-build/
 node_modules
 .env
 google-services.json
+GoogleService-Info.plist
 app.json
 eas.json

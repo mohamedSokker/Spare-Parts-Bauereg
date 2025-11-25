@@ -53,6 +53,7 @@ const Login = ({ navigation, socket }) => {
           password: password.current.value,
         }),
       });
+      console.log(result?.data);
       AsyncStorage.getItem("token", async (err, res) => {
         if (err)
           showToast(
@@ -142,7 +143,7 @@ const Login = ({ navigation, socket }) => {
             start={{ x: 1, y: 1 }}
             end={{ x: 0, y: 0 }}
             style={{
-              width: 300,
+              width: "90%",
               backgroundColor: "#022D4E",
               borderRadius: 5,
               height: 50,
@@ -186,7 +187,7 @@ const Login = ({ navigation, socket }) => {
             start={{ x: 1, y: 1 }}
             end={{ x: 0, y: 0 }}
             style={{
-              width: 300,
+              width: "90%",
               backgroundColor: "#022D4E",
               borderRadius: 5,
               height: 50,
@@ -222,7 +223,7 @@ const Login = ({ navigation, socket }) => {
             start={{ x: 1, y: 1 }}
             end={{ x: 0, y: 0 }}
             style={{
-              width: 300,
+              width: "90%",
               backgroundColor: "#022D4E",
               borderRadius: 50,
               height: 50,

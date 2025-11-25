@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Icon } from "react-native-elements";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
 import { colors } from "../globals/styles";
 import { LoginContext } from "../contexts/LoginContext";
@@ -30,7 +30,7 @@ const Navbar = ({ navigation, initial }) => {
   //   };
   //   getCartData();
   // }, []);
-  console.log(BASE_URL);
+  console.log(EXPO_PUBLIC_BASE_URL);
   const { usersData } = useContext(LoginContext);
   return (
     <View style={styles.view1}>
@@ -109,7 +109,7 @@ const Navbar = ({ navigation, initial }) => {
           <Image
             style={styles.img}
             source={{
-              uri: `${BASE_URL}/${usersData?.img}`,
+              uri: `${EXPO_PUBLIC_BASE_URL}/${usersData?.img}`,
             }}
             resizeMode="cover"
           />

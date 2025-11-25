@@ -1,4 +1,4 @@
 import { io } from "socket.io-client";
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
-export const socket = io(BASE_URL, { autoConnect: false });
+export const socket = io(EXPO_PUBLIC_BASE_URL, { autoConnect: false });

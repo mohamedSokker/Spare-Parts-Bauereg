@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React, { useContext } from "react";
 
-import { BASE_URL } from "@env";
+import { EXPO_PUBLIC_BASE_URL } from "@env";
 
 import { colors } from "../globals/styles";
 import { Ar, En } from "../globals/language";
@@ -46,14 +46,14 @@ const Post = ({ item }) => {
           }}
         >
           <Text style={{ color: "grey", fontSize: 13 }}>
-            {new Date(getDate(item.DateTime)).toLocaleString()}
+            {new Date(item.DateTime).toLocaleString()}
           </Text>
         </View>
       </View>
       <View style={styles.view3}>
         <View style={styles.view4}>
           <Image
-            source={{ uri: `${BASE_URL}/${item?.FromUserImg}` }}
+            source={{ uri: `${EXPO_PUBLIC_BASE_URL}/${item?.FromUserImg}` }}
             style={styles.img}
           />
           <Text style={styles.txt1}>{item.FromUserName}</Text>
